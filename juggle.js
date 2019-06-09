@@ -1,0 +1,1 @@
+Promise.all(process.argv.slice(2).map(url=> new Promise((resolve, reject)=>  (s => require('http').get(url, res=> (res.on('data', data=> (s += data.toString())), res.on('end', ()=> resolve(s)) )))('') ))).then(l => l.forEach(ll => console.log(ll)))

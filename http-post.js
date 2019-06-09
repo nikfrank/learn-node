@@ -1,0 +1,1 @@
+require('http').createServer((req, res)=> (req.method !== 'POST' ? null : (req.on('data', data=> res.write(data.toString().toUpperCase())), req.on('close', ()=> res.end()) ) )).listen(process.argv[2])
